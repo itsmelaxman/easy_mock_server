@@ -1,12 +1,18 @@
 import 'dart:convert';
 
-/// Reads simple route map JSON into `Map<String, String>`.
+/// Parses a JSON route map string into a `Map<String, String>`.
 ///
 /// Expected format:
+/// ```json
 /// {
 ///   "/users": "users.json",
 ///   "/api/v1/profile": "profile_custom.json"
 /// }
+/// ```
+///
+/// Returns a map of request paths to their corresponding mock file paths.
+///
+/// Throws [FormatException] if the JSON is invalid or keys/values are not strings.
 Map<String, String> parseRouteMapJson(String jsonString) {
   final decoded = jsonDecode(jsonString);
 

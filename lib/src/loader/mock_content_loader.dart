@@ -10,9 +10,16 @@ abstract class MockContentLoader {
   Future<String?> loadText(String relativePath);
 }
 
+/// Loads mock JSON content from the local file system.
+///
+/// Suitable for Dart CLI applications and server-side development.
 class FileSystemMockContentLoader extends MockContentLoader {
+  /// Creates a file-system loader.
+  ///
+  /// [basePath] is the root directory for mock files (e.g., 'assets/mocks').
   const FileSystemMockContentLoader({required this.basePath});
 
+  /// The root directory where mock JSON files are stored.
   final String basePath;
 
   @override
@@ -41,13 +48,24 @@ class FileSystemMockContentLoader extends MockContentLoader {
 
 typedef AssetStringReader = Future<String> Function(String key);
 
+/// Loads mock JSON content via a callback function (for Flutter assets).
+///
+/// Suitable for Flutter apps that need to load from bundled assets.
+/// Pass [rootBundle.loadString] from `package:flutter/services.dart`.
 class AssetCallbackMockContentLoader extends MockContentLoader {
+  /// Creates an asset callback loader.
+  ///
+  /// [basePath] is the asset directory (e.g., 'assets/mocks').
+  /// [readAsset] is a callback to load asset content (e.g., rootBundle.loadString).
   const AssetCallbackMockContentLoader({
     required this.basePath,
     required this.readAsset,
   });
 
+  /// The base path within the asset bundle.
   final String basePath;
+
+  /// Callback function to read asset content.
   final AssetStringReader readAsset;
 
   @override

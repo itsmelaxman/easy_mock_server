@@ -4,14 +4,22 @@ import '../model/mock_request_context.dart';
 import '../model/mock_response.dart';
 import 'easy_mock_server_config.dart';
 
+/// Main HTTP mock server class.
+///
+/// Starts and manages a local HTTP server that serves JSON responses from files.
+/// Supports middleware for request/response interception.
 class EasyMockServer {
+  /// Creates an EasyMockServer with the given configuration.
   EasyMockServer({required this.config});
 
+  /// The server configuration (routes, middleware, loaders, etc.).
   final EasyMockServerConfig config;
   HttpServer? _server;
 
+  /// Returns true if the server is currently running.
   bool get isRunning => _server != null;
 
+  /// The base URI of the running server (http://host:port), or null if stopped.
   Uri? get baseUri {
     final server = _server;
     if (server == null) {
@@ -20,6 +28,12 @@ class EasyMockServer {
     return Uri(scheme: 'http', host: server.address.host, port: server.port);
   }
 
+  /// Starts the HTTP server.
+  ///
+  /// Returns the base [Uri] of the running server. If already running,
+  /// returns the existing [baseUri].
+  ///
+  /// Throws [SocketException] if binding to the configured host/port fails.
   Future<Uri> start() async {
     if (_server != null) {
       return baseUri!;
@@ -33,6 +47,10 @@ class EasyMockServer {
     return uri;
   }
 
+  /// Stops the HTTP server.
+  ///
+  /// If [force] is true (default), closes the server immediately.
+  /// If false, waits for active connections to close gracefully.
   Future<void> stop({bool force = true}) async {
     final server = _server;
     if (server == null) {

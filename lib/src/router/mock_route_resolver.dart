@@ -68,7 +68,14 @@ class DefaultMockRouteResolver extends MockRouteResolver {
 }
 
 /// Route resolver that allows explicit path-to-file mapping, then fallback logic.
+///
+/// Use this when you need custom path→file mappings before falling back to
+/// the default resolution strategy.
 class MappedRouteResolver extends MockRouteResolver {
+  /// Creates a mapped route resolver.
+  ///
+  /// [routeMap] maps request paths to specific mock files.
+  /// [fallback] is the resolver to use for paths not in the map (defaults to [DefaultMockRouteResolver]).
   MappedRouteResolver({
     required Map<String, String> routeMap,
     MockRouteResolver? fallback,
