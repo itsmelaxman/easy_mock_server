@@ -26,7 +26,7 @@
 /// - [MockContentLoader]: Abstract interface for loading JSON from files or assets
 /// - [MockRouteResolver]: Path resolution strategy (default or mapped)
 /// - [MockMiddleware]: Composable request/response interceptors
-library ;
+library;
 
 export 'src/loader/mock_content_loader.dart';
 export 'src/middleware/delay_middleware.dart';
