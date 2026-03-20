@@ -1,3 +1,9 @@
+## 0.1.1
+
+- Improve dartdoc coverage across public API for better pub.dev documentation score
+- Add library-level docs in `easy_mock_server.dart`
+- Add API docs for loaders, middleware, models, router, and server classes
+
 ## 0.1.0
 
 - Initial release of `EasyMockServer`

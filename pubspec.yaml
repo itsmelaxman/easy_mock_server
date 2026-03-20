@@ -1,6 +1,6 @@
 name: easy_mock_server
 description: A reusable local HTTP mock server for Dart and Flutter projects.
-version: 0.1.0
+version: 0.1.1
 homepage: https://pub.dev/packages/easy_mock_server
 
 environment:
