@@ -1,0 +1,5 @@
+{
+  "version": "v1",
+  "name": "Nested Profile",
+  "features": ["mocks", "interceptors"]
+}
