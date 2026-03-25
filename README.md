@@ -1,5 +1,10 @@
 # EasyMockServer
 
+[![pub package](https://img.shields.io/pub/v/easy_mock_server.svg)](https://pub.dev/packages/easy_mock_server)
+[![license: MIT](https://img.shields.io/github/license/itsmelaxman/easy_mock_server.svg)](https://github.com/itsmelaxman/easy_mock_server/blob/main/LICENSE)
+[![top language](https://img.shields.io/github/languages/top/itsmelaxman/easy_mock_server.svg)](https://github.com/itsmelaxman/easy_mock_server)
+[![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://dart.dev/effective-dart)
+
 `EasyMockServer` is a reusable Dart package that runs a local HTTP mock server and serves JSON files as API responses.
 
 It is designed for:
