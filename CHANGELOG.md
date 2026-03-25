@@ -1,3 +1,8 @@
+## 0.1.2
+
+- Add package metadata links in `pubspec.yaml` (`repository`, `issue_tracker`)
+- Polish release metadata for improved pub.dev package details
+
 ## 0.1.1
 
 - Improve dartdoc coverage across public API for better pub.dev documentation score
